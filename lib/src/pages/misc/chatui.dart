@@ -3,7 +3,9 @@
  * profile: https://github.com/cimplesid
   */
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/core/presentation/res/assets.dart';
 
 class ChatUi extends StatelessWidget {
   static final String path = "lib/src/pages/misc/chatui.dart";
@@ -28,7 +30,7 @@ class ChatUi extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       image: DecorationImage(
-                        image: AssetImage(friend.image),
+                        image: CachedNetworkImageProvider(friend.image),
                         fit: BoxFit.cover
                       ),
                       borderRadius: BorderRadius.circular(50.0),
@@ -156,31 +158,31 @@ class ChatUi extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/1.jpg',
+                        personImagePath: avatars[0],
                         actColor: Colors.greenAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/backdrop.png',
+                        personImagePath: avatars[1],
                         actColor: Colors.yellowAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/avatar.png',
+                        personImagePath: avatars[2],
                         actColor: Colors.redAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/5.jpg',
+                        personImagePath: avatars[3],
                         actColor: Colors.yellowAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/6.jpg',
+                        personImagePath: avatars[4],
                         actColor: Colors.greenAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/7.jpg',
+                        personImagePath: avatars[5],
                         actColor: Colors.greenAccent,
                       ),
                       OnlinePersonAction(
-                        personImagePath: 'assets/img/1.jpg',
+                        personImagePath: avatars[6],
                         actColor: Colors.greenAccent,
                       ),
                     ],
@@ -256,7 +258,7 @@ class OnlinePersonAction extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),
                 image: DecorationImage(
-                  image: AssetImage(personImagePath),
+                  image: CachedNetworkImageProvider(personImagePath),
                   fit: BoxFit.cover
                 ),
               ),
@@ -291,10 +293,10 @@ class Friend {
 }
 
 final List<Friend> friends = [
-  Friend('John', 'assets/img/1.jpg', 'Hello, how are you?', '1 hr.'),
-  Friend('RIna', 'assets/img/4.jpg', 'Hello, how are you?', '1 hr.'),
-  Friend('Brad', 'assets/img/5.jpg', 'Hello, how are you?', '1 hr.'),
-  Friend('Don', 'assets/img/7.jpg', 'Hello, how are you?', '1 hr.'),
-  Friend('Mukambo', 'assets/img/6.jpg', 'Hello, how are you?', '1 hr.'),
-  Friend('Sid', 'assets/img/avatar.png', 'Hello, how are you?', '1 hr.'),
+  Friend('John', avatars[0], 'Hello, how are you?', '1 hr.'),
+  Friend('RIna', avatars[1], 'Hello, how are you?', '1 hr.'),
+  Friend('Brad', avatars[2], 'Hello, how are you?', '1 hr.'),
+  Friend('Don', avatars[3], 'Hello, how are you?', '1 hr.'),
+  Friend('Mukambo', avatars[4], 'Hello, how are you?', '1 hr.'),
+  Friend('Sid', avatars[6], 'Hello, how are you?', '1 hr.'),
 ];
