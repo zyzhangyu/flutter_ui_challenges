@@ -31,6 +31,7 @@ dependencies:
   animated_floatactionbuttons: ^0.1.0
   share: ^0.6.2
   intl: ^0.15.8
+  snappable: ^1.0.1
 
   flare_flutter:
     git:
